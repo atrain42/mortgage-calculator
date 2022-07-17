@@ -1,0 +1,126 @@
+.section {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    max-width: 100vw;
+}
+.calculator {
+    position: absolute;
+    top: 35%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    & h1 {
+        font-family: 'Inter', sans-serif;
+        font-size: 4.5rem;
+        margin-bottom: 2rem;
+        white-space: nowrap;
+    }
+
+    & label {
+        font-family: 'Inter', sans-serif;
+        font-weight: 300;
+        font-size: 2rem;
+    }
+
+    & input {
+        height: 2.5rem;
+    }
+
+    & p {
+        font-family: 'Inter', sans-serif;
+        font-size: 2.5rem;
+    }
+
+    & button {
+        font-family: "Inter", sans-serif;
+        background-color: rgb(80, 80, 80);
+        color: rgb(227, 227, 227);
+        font-size: 2rem;
+        padding: 1rem 2rem;
+        cursor: pointer;
+        transition: all 0.25s;
+
+        &:hover {
+            border-radius: 20px;
+        }
+
+        &:nth-child(1) {
+            margin-right: 2.5rem;
+        }
+    }
+}
+
+#clearBtn {
+    padding: 1rem 4rem;
+}
+
+.button-container {
+    margin-top: 6.5rem;
+    margin-bottom: 5rem;
+}
+
+.answer {
+    display: flex;
+    align-items: center;
+    margin-top: 4rem;
+
+    & h2 {
+        font-family: 'Inter', sans-serif;
+        font-size: 2.5rem;
+        margin-right: 2rem;
+    }
+}
+
+#alert {
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    white-space: nowrap;
+    font-family: 'Inter', sans-serif;
+    font-size: 1.75rem;
+    color: rgb(135, 30, 30);
+    animation: blink 1.5s linear;
+}
+
+
+
+.input-container {
+    margin-bottom: 1.5rem;
+    display: flex;
+    justify-content: space-between;
+}
+
+@keyframes blink {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+@media (max-width: 500px) {
+    .calculator {
+        & h1 {
+            font-size: 3rem;
+        }
+
+        & label {
+            font-size: 1.5rem;
+        }
+
+        & button {
+            font-size: 1.5rem;
+        }
+    }
+
+    .answer {
+        & h2 {
+            font-size: 1.75rem;
+        }
+    }
+
+}

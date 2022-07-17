@@ -1,0 +1,22 @@
+{
+  "name": "mortgagecalculator",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "nodemon src/index.js",
+    "compile": "sass public/sass/main.scss public/css/style.css",
+    "start": "node src/index.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.18.1",
+    "hbs": "^4.2.0",
+    "nodemon": "^2.0.19"
+  },
+  "devDependencies": {
+    "sass": "^1.53.0"
+  }
+}

@@ -1,0 +1,31 @@
+<div class="calculator">
+    <h1>Mortgage Calculator</h1>
+    <div class="input-container">
+        <label for="Loan-amount">Total Loan Amount</label>
+        <input type="number" name="Loan-amount" class="input" id="total" min="0">
+    </div>
+
+    <div class="input-container">
+        <label for="down-payment">Down payment</label>
+        <input type="number" name="Loan-amount" class="input" id="down" min="0">
+    </div>
+
+    <div class="input-container">
+        <label for="interest-rate">Interest rate %</label>
+        <input type="number" name="interest-rate" class="input" id="interest" min="0">
+    </div>
+
+    <div class="input-container">
+        <label for="loan-term">Loan Term (in years)</label>
+        <input type="number" name="loan-term" class="input" id="duration" min="0">
+    </div>
+    <div class="answer">
+        <h2>Estimated payment:</h2>
+        <p id="paragraph-value"></p>
+    </div>
+    <div class="button-container">
+        <button id="submitBtn">Calculate</button>
+        <button id="clearBtn">Clear</button>
+    </div>
+    <p id="alert"></p>
+</div>

@@ -19,39 +19,50 @@ clearBtn.addEventListener("click", function (e) {
 });
 
 submitBtn.addEventListener("click", function () {
-  let total = document.getElementById("total").value;
-  let interest = document.querySelector("#interest").value;
-  let duration = document.querySelector("#duration").value;
-  let downPayment = document.querySelector("#down").value;
+  // let total = document.getElementById("total").value;
+  // let interest = document.querySelector("#interest").value;
+  // let duration = document.querySelector("#duration").value;
+  // let downPayment = document.querySelector("#down").value;
   try {
-    if (total < 0 || interest < 0 || duration < 0 || downPayment < 0) {
+    if (
+      total.value < 0 ||
+      interest.value < 0 ||
+      duration.value < 0 ||
+      downPayment.value < 0
+    ) {
       throw new Error("All values must be positive");
     }
     if (
-      total === "" ||
-      interest === "" ||
-      duration === "" ||
-      downPayment === ""
+      total.value === "" ||
+      interest.value === "" ||
+      duration.value === "" ||
+      downPayment.value === ""
     ) {
       throw new Error("Please fill out all fields");
     }
 
-    if (downPayment) {
-      total = total - downPayment;
+    if (downPayment.value) {
+      total.value = total.value - downPayment.value;
     }
 
     //calculations
-    const monthlyInterest = (+interest * 0.01) / 12;
-    const exponent = (1 + monthlyInterest) ** (+duration * 12);
+    const monthlyInterest = (+interest.value * 0.01) / 12;
+    const exponent = (1 + monthlyInterest) ** (+duration.value * 12);
     const numerator = monthlyInterest * exponent;
     const denominator = exponent - 1;
-    const totalValue = total * (numerator / denominator);
+    const totalValue = total.value * (numerator / denominator);
 
     var output = Math.round(totalValue)
       .toLocaleString()
       .replace(/\B(?=(\d{3})+(?!\d))/g, ",");
     const appendNumber = function () {
-      if (!total || !interest || !duration || !downPayment) return;
+      if (
+        !total.value ||
+        !interest.value ||
+        !duration.value ||
+        !downPayment.value
+      )
+        return;
       parentEl.innerHTML = "$" + output;
     };
 
